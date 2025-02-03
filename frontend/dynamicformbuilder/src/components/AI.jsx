@@ -58,7 +58,8 @@ export default function AI() {
                         tr:nth-child(even) {
                           background-color: #dddddd;
                         }
-                        </style>
+                        </style>git commit -m "Your commit message"
+
                         - Use proper indentation for clarity.  
                         - Do not mention that you are using HTML.  
 
