@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
+import NavbarDark from "./NavbarDark";
 export default function AI() {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
@@ -116,6 +116,8 @@ const chatInstance = model.startChat({
     };
 
     return (
+        <>
+        <NavbarDark/>
         <div className="flex justify-center items-center h-screen bg-gray-100">
             <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-5 flex flex-col h-[90vh]"> 
                 <h1 className="text-xl font-semibold text-gray-800 mb-4">Dynamic Form Chatbot</h1>
@@ -151,5 +153,6 @@ const chatInstance = model.startChat({
                 </div>
             </div>
         </div>
+        </>
     );
 }
