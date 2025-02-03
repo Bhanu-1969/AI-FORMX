@@ -86,6 +86,13 @@ const Home = ({ userid }) => {
                                         >
                                             Download
                                         </button>
+                                        <button 
+                                            type="button" 
+                                            onClick={() => navigate(`/analyze/${form._id}`)}
+                                            className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition"
+                                        >
+                                            Analyze With AI
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
