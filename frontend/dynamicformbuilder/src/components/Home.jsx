@@ -9,7 +9,7 @@ const Home = ({ userid }) => {
     useEffect(() => {
         const fetchform = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/api/forms/${userid}`);
+                const res = await axios.get(`https://ai-formx-backend.onrender.com/api/forms/${userid}`);
                 setdisforms(res.data);
             } catch (err) {
                 console.log(err);
@@ -30,7 +30,7 @@ const Home = ({ userid }) => {
 
     const handleExcel = async (formid) => {
         try {
-            const res = await axios.get(`http://localhost:3000/api/forms/download/${formid}`, {
+            const res = await axios.get(`https://ai-formx-backend.onrender.com/api/forms/download/${formid}`, {
                 responseType: 'arraybuffer',
             });
             const url = window.URL.createObjectURL(new Blob([res.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }));

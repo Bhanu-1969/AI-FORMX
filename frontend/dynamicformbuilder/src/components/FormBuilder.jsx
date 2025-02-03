@@ -45,7 +45,7 @@ const FormBuilder = ({ userid }) => {
       return;
     }
     try {
-      const res = await axios.post(`http://localhost:3000/api/forms/${userid}`, {
+      const res = await axios.post(`https://ai-formx-backend.onrender.com/api/forms/${userid}`, {
         userid,
         formname: formName,
         formfield: formFields,

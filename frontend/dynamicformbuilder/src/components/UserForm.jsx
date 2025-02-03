@@ -13,7 +13,7 @@ const UserForm = () => {
   useEffect(() => {
     const handleUserForm = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/forms/fill/${id}`);
+        const res = await axios.get(`https://ai-formx-backend.onrender.com/api/forms/fill/${id}`);
         setFormData(res.data);
         setAnswers(new Array(res.data.fields.length).fill(null));
       } catch (err) {
@@ -40,7 +40,7 @@ const UserForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:3000/api/forms/submit/${id}`, answers);
+      const res = await axios.post(`https://ai-formx-backend.onrender.com/api/forms/submit/${id}`, answers);
       navigate('/thankyou');
     } catch (err) {
       console.log(err);

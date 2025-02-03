@@ -13,7 +13,7 @@ const Login = ({ setAuth, setuserid }) => {
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
-            const res = await axios.post("http://localhost:3000/api/forms/login", form);
+            const res = await axios.post("https://ai-formx-backend.onrender.com/api/forms/login", form);
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("userid", res.data.user.id);
             setuserid(res.data.user.id);

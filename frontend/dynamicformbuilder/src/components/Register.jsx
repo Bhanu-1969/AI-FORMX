@@ -14,7 +14,7 @@ const Register = ({ setAuth }) => {
     const handleSumbit = async (event) => {
         event.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3000/api/forms/register', form);
+            const res = await axios.post('https://ai-formx-backend.onrender.com/api/forms/register', form);
             localStorage.setItem("token", res.data.token);
             setAuth(true);
             navigate('/login');

@@ -15,12 +15,12 @@ app.use(cors(corsOptions));
 app.use(express.json())
 app.use('/api/forms',forms)
 
-
+const port=process.env.PORT ||3000
 
 const start =async()=>{
 try{
     await connectDB(process.env.MONGO_URL)
-    app.listen(3000)
+    app.listen(port)
 }catch(error){
     console.log(error)
 }

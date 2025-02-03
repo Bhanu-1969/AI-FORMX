@@ -20,7 +20,7 @@ export default function AI() {
     useEffect(() => {
         async function fetch() {
             try {
-                const res = await axios.get(`http://localhost:3000/api/forms/fill/${id}`);
+                const res = await axios.get(`https://ai-formx-backend.onrender.com/api/forms/fill/${id}`);
                 const f1 = res.data.fields.map(({ _id, ...rest }) => rest);
                 const y = res.data.responses.map(({ _id, submittedAt, ...rest }) => rest);
                 
