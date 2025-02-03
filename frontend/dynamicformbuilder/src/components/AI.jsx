@@ -10,9 +10,11 @@ export default function AI() {
     const [fields, setFields] = useState(null);
     const [chat, setChat] = useState(null);
     const { id } = useParams();
-    
-    const API_KEY = "AIzaSyBjqi5CHZWXn0Nsoo6XbciAU1GBpaUN4t8"; 
+    const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
     const genAI = new GoogleGenerativeAI(API_KEY);
+
+    
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     useEffect(() => {
